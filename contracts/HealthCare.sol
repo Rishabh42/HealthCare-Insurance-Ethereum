@@ -15,6 +15,8 @@ contract HealthCare {
         mapping (address => uint8) signatures;
     }
 
+    event recordCreated(uint256 ID, string testName, string date, string hospitalName, uint256 price);
+
     modifier hospitalOnly {
         require (msg.sender == hospitalAdmin);
         _;
@@ -27,6 +29,7 @@ contract HealthCare {
 
     mapping (uint256=> Record) records;
     Record[] public recordsArr;
+    Record[] public verifiedRecord;
 
     function newRecord (string _tName, string _date, string hName, uint256 price) public{
         Record memory newRecord = Record ({
@@ -39,6 +42,7 @@ contract HealthCare {
         });
         records[newRecord.ID] = newRecord;
         recordsArr.push(newRecord);
+        recordCreated(newRecord.ID, _tName, _date, hName, price);
     }
 
     function getUnsignedRecords(uint256 _ID) public returns (uint256, string, string, string, uint256){
