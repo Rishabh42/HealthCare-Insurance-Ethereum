@@ -37,7 +37,7 @@ contract HealthCare {
     function newRecord (uint256 _ID, string _tName, string _date, string hName, uint256 price) public{
         Record storage _newrecord = _records[_ID];
 
-        if (_records[_ID].isValue) throw;
+        if (_records[_ID].isValue) revert();
 
         else {
 
