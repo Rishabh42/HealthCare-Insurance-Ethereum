@@ -24,11 +24,14 @@ contract HealthCare {
     mapping (uint256=> Record) public _records;
     uint256[] public recordsArr;
 
-    constructor(address) public {
+      constructor() public {
+
         hospitalAdmin = msg.sender;
+        labAdmin;                       //enter address
     }
 
     event recordCreated(uint256 ID, string testName, string date, string hospitalName, uint256 price);
+    event recordSigned(uint256 ID, string testName, string date, string hospitalName, uint256 price);
 
     function newRecord (uint256 _ID, string _tName, string _date, string hName, uint256 price) public{
         Record storage _newrecord = _records[_ID];
@@ -62,5 +65,9 @@ contract HealthCare {
 
         records.signatures[msg.sender] = 1;
         records.signatureCount++;
+
+        if(records.signatureCount == 2)
+            emit  recordSigned(records.ID, records.testName, records.date, records.hospitalName, records.price);
+
     }
 }
