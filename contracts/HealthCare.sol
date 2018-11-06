@@ -12,6 +12,7 @@ contract HealthCare {
         string date;
         string hospitalName;
         uint256 price;
+        bool isValue;
         uint8 signatureCount;
         mapping (address => uint8) signatures;
     }
@@ -36,16 +37,20 @@ contract HealthCare {
     function newRecord (uint256 _ID, string _tName, string _date, string hName, uint256 price) public{
         Record storage _newrecord = _records[_ID];
 
+        if (_records[_ID].isValue) throw;
+
+        else {
+
             _newrecord.pAddr = msg.sender;
             _newrecord.ID = _ID;
             _newrecord.testName = _tName;
             _newrecord.date = _date;
             _newrecord.hospitalName = hName;
             _newrecord.price = price;
+            _newrecord.isValue = true;
             _newrecord.signatureCount = 0;
+        }
 
-
-       // _records[_ID] = _newrecord;
         recordsArr.push(_ID);
         emit  recordCreated(_newrecord.ID, _tName, _date, hName, price);
     }
