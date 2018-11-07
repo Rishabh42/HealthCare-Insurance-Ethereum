@@ -55,7 +55,7 @@ contract HealthCare {
         emit  recordCreated(_newrecord.ID, _tName, _date, hName, price);
     }
 
-    function getUnsignedRecords(uint256 _ID) public view returns (uint256, string, string, string, uint256, uint8){
+    function getRecords(uint256 _ID) public view returns (uint256, string, string, string, uint256, uint8){
         return (_records[_ID].ID, _records[_ID].testName, _records[_ID].date, _records[_ID].hospitalName, _records[_ID].price, _records[_ID].signatureCount);
     }
 
