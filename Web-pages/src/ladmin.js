@@ -1,28 +1,36 @@
 import React from 'react';
-import './ladmin.css';
+//import './ladmin.css';
 
  export default class Labadmin extends React.Component{
    render(){
      return(
-       <div>
-          <h3>Lab Admin</h3>
-         <div>
+      <div className="container container-fluid login-conatiner">
+       <div className="col-md-4">
+       <h3 className="text-center">Lab Admin</h3>
+       <div className="login-form">
           <h4>Approve Medical Record</h4>
-          <input type="Number" placeholder="Input"></input><br />
-          <button className="sub">Approve</button><br />
+          <div className="form-group">
+          <input type="Number" className="form-control" placeholder="Input"></input></div>
+          <div className="form-group">
+          <button className="btn btn-primary btn-block">Approve</button></div>
          </div>
-         <div className="tbl">
-           <h2>Records</h2>
-          <table>
+         </div>
+         <div className="col-md-6 col-md-offset-2">
+         <div className="c-list">
+         <h2 className="text-center">Records</h2>
+           <table class="table table-bordered table-striped">
+           <thead>
              <tr>
-                <th>ID &nbsp;&nbsp;&nbsp;</th>
-                <th>Name &nbsp;&nbsp;&nbsp;</th>
-                <th>Date &nbsp;&nbsp;&nbsp;</th>
-                <th>Hospital Name &nbsp;&nbsp;&nbsp;</th>
-                <th>Price &nbsp;&nbsp;&nbsp;</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Hospital Name</th>
+                <th>Price</th>
                 <th>Sign Count</th>
              </tr>
+             </thead>
           </table>
+         </div>
          </div>
        </div>
      );

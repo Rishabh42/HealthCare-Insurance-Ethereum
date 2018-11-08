@@ -1,4 +1,4 @@
-h1{
+/* h1{
   color: white;
   font-size: 40px;
   text-align: center;
@@ -65,4 +65,23 @@ button{
   border: 2px solid  #B71C1C;
   transition: 0.5s;
   cursor: pointer;
+}
+ */
+.App {
+  text-align: center;
+  /*background: rgba(204, 204, 204, 0.5);*/
+}
+
+
+.App-header {
+  background-color: #337ab7;
+  padding: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-size: 20px;
+  margin: 0px;
+}
+
+.App-title {
+  font-size: 1.8em;
 }
