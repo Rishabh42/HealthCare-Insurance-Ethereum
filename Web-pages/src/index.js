@@ -35,7 +35,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-{this.state.login ? this.state.user === "rishabh" ? this.state.password === "patient"? <Redirect to="/patient" /> :  
+{this.state.login ? this.state.user === "" ? this.state.password === "patient"? <Redirect to="/patient" /> :  
 this.state.password === "hadmin" ?<Redirect to="/hadmin" /> : 
 this.state.password === "labadmin"? <Redirect to="/labadmin" />:
 this.state.password === "insurance"? <Redirect to="/insurance" />:null:null:null}
@@ -48,7 +48,7 @@ this.state.password === "insurance"? <Redirect to="/insurance" />:null:null:null
             <option>Lab Admin</option>
             <option>Insurance Company</option>
           </select>
-          <input type="text" onChange={e => this.setState({user:e.target.value})}  placeholder="Username"></input><br />
+          
           <input type="password" placeholder="Password" onChange={e => this.setState({password:e.target.value})}  ></input><br />
           <button className="sub" onClick={()=> this.setState({login:true})} >Submit</button><br />
         </div>
