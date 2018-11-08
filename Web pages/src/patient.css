@@ -1,0 +1,75 @@
+div{
+  display: inline;
+}
+h1{
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  font-family: calibri;
+  text-shadow: 2px 2px black;
+}
+header{
+  background-color: #26474e;
+padding: 2px;
+color: white;
+font-size: 40px;
+margin-top: -8px;
+width: 101%;
+margin-left: -8px;
+}
+.tbl{
+  position:relative;
+  width: 40%;
+  top:-180px;
+  padding: 30px;
+  height: 200px;
+  float: left;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: -20px 0 15px rgba(0,0,0,0.2);
+  margin-left: 55%;
+}
+th{
+  font-size: 17px;
+}
+h4{
+  font-family: calibri;
+  font-size: 30px;
+  margin-left: 1%;
+}
+h2{
+  font-family: calibri;
+  margin-top: -10px;
+  text-align: center;
+  font-size: 40px;
+}
+input{
+  font-family: calibri;
+  font-size: 20px;
+  display: block;
+  border-radius: 25px;
+  padding: 5px;
+  width: 25%;
+  border: 2px solid grey;
+}
+button{
+  font-family: calibri;
+  border-radius:32px;
+  margin-left: 5%;
+  margin-top: -10%;
+  font-size: 20px;
+  margin-top:15px;
+  width: 15%;
+  color: white;
+  background:  #B71C1C;
+  border: 2px solid  #B71C1C;
+  transition: 0.5s;
+  cursor: pointer;
+}
+h3{
+  margin-top: -0.7%;
+  font-size: 40px;
+  font-family: calibri;
+  text-align: center;
+  color: #B71C1C;
+}
