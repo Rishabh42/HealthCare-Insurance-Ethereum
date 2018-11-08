@@ -1,14 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './insurance.css';
 
- class Insurance extends React.Component{
+ export default class Insurance extends React.Component{
    render(){
      return(
        <div>
-          <header>
-             <h1>HealthCare Insurance</h1>
-          </header>
           <h3>Insurance Page</h3>
          <div className="tbl">
            <h2>Approved Records</h2>
@@ -28,4 +24,3 @@ import './insurance.css';
    }
  }
 
-ReactDOM.render(<Insurance />, document.getElementById('root'));

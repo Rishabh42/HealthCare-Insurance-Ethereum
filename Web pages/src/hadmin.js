@@ -1,14 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './ladmin.css';
 
- class labadmin extends React.Component{
+ export default class Hadmin extends React.Component{
    render(){
      return(
        <div>
-          <header>
-             <h1>HealthCare Insurance</h1>
-          </header>
           <h3>Lab Admin</h3>
          <div>
           <h4>Approve Medical Record</h4>
@@ -32,5 +28,3 @@ import './ladmin.css';
      );
    }
  }
-
-ReactDOM.render(<Labadmin />, document.getElementById('root'));

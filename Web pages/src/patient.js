@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './patient.css';
 
- class Patient extends React.Component{
+ export default class Patient extends React.Component{
    render(){
      return(
        <div>
-          <header>
-             <h1>HealthCare Insurance</h1>
-          </header>
+
          <div className="login">
           <h2>New Record</h2>
           <input type="text" placeholder="ID"></input><br />
@@ -36,4 +34,3 @@ import './patient.css';
    }
  }
 
-ReactDOM.render(<Patient />, document.getElementById('root'));
