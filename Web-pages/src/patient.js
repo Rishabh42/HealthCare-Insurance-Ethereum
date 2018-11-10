@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import web3 from './web3';
+import HealthCare from './HealthCare';
 
 // import './patient.css';
 
@@ -56,4 +58,3 @@ import ReactDOM from 'react-dom';
      );
    }
  }
-
