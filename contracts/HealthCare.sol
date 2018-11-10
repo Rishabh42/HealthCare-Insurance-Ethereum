@@ -59,7 +59,7 @@ contract HealthCare {
         return (_records[_ID].ID, _records[_ID].testName, _records[_ID].date, _records[_ID].hospitalName, _records[_ID].price, _records[_ID].signatureCount);
     }
 
-    function hospitalSign(uint256 _ID) signOnly public {
+    function signRecord(uint256 _ID) signOnly public {
         Record storage records = _records[_ID];
 
         require(0x0 != records.pAddr);
