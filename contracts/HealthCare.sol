@@ -13,8 +13,8 @@ contract HealthCare {
         string hospitalName;
         uint256 price;
         bool isValue;
-        uint8 signatureCount;
-        mapping (address => uint8) signatures;
+        uint256 signatureCount;
+        mapping (address => uint256) signatures;
     }
 
     modifier signOnly {
@@ -28,7 +28,7 @@ contract HealthCare {
       constructor() public {
 
         hospitalAdmin = msg.sender;
-        labAdmin;                       //enter address
+        labAdmin = 0x7fAA47fc6F7027feF185c766f9c3C0cb5d8D8850;                       //enter address
     }
 
     event recordCreated(uint256 ID, string testName, string date, string hospitalName, uint256 price);
@@ -55,14 +55,14 @@ contract HealthCare {
         emit  recordCreated(_newrecord.ID, _tName, _date, hName, price);
     }
 
-    function getRecords(uint256 _ID) public view returns (uint256, string, string, string, uint256, uint8){
+  /*  function getRecords(uint256 _ID) public view returns (uint256, string, string, string, uint256, uint256){
         return (_records[_ID].ID, _records[_ID].testName, _records[_ID].date, _records[_ID].hospitalName, _records[_ID].price, _records[_ID].signatureCount);
-    }
+    }  */
 
     function signRecord(uint256 _ID) signOnly public {
         Record storage records = _records[_ID];
 
-        require(0x0 != records.pAddr);
+        require(address(0) != records.pAddr);
 
         require(msg.sender != records.pAddr);
 
