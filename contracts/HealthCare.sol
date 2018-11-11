@@ -37,9 +37,7 @@ contract HealthCare {
     function newRecord (uint256 _ID, string _tName, string _date, string hName, uint256 price) public{
         Record storage _newrecord = _records[_ID];
 
-        if (_records[_ID].isValue) revert();
-
-        else {
+         require(!_records[_ID].isValue);
 
             _newrecord.pAddr = msg.sender;
             _newrecord.ID = _ID;
@@ -49,15 +47,14 @@ contract HealthCare {
             _newrecord.price = price;
             _newrecord.isValue = true;
             _newrecord.signatureCount = 0;
-        }
 
         recordsArr.push(_ID);
         emit  recordCreated(_newrecord.ID, _tName, _date, hName, price);
     }
 
-  /*  function getRecords(uint256 _ID) public view returns (uint256, string, string, string, uint256, uint256){
+   /* function getRecords(uint256 _ID) public view returns (uint256, string, string, string, uint256, uint256){
         return (_records[_ID].ID, _records[_ID].testName, _records[_ID].date, _records[_ID].hospitalName, _records[_ID].price, _records[_ID].signatureCount);
-    }  */
+    } */
 
     function signRecord(uint256 _ID) signOnly public {
         Record storage records = _records[_ID];
