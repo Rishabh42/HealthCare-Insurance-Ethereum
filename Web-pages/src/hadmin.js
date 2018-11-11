@@ -1,10 +1,28 @@
 import React from 'react';
+import web3 from './web3';
+import HealthCare from './HealthCare';
 //import './ladmin.css';
 
  export default class Hadmin extends React.Component{
+  /* state = {
+     hospitalSign: '',
+   };
+
+   async componentDidMount(){
+    const hospitalAdmin = await HealthCare.methods.hospitalAdmin().call();
+
+    this.setState({hospitalAdmin});
+   }
+
+   onSubmit = async (event) => {
+     event.preventDefault();
+
+
+
+   }; */
+
+
    render(){
-
-
      return(
 
       <div className="container container-fluid login-conatiner">

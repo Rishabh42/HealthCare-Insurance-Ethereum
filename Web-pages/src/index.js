@@ -5,8 +5,8 @@ import Patient from './patient'
 import Hadmin from './hadmin'
 import Labadmin from './ladmin'
 import Insurance from './insurance'
-import './index.css';
-
+import './index.css'
+import HealthCare from './HealthCare'
 const FullApp = () => (
   <Router>
     <div>

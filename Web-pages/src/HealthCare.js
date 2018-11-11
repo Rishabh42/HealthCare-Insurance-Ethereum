@@ -1,22 +1,8 @@
 import web3 from './web3';
 
-const address = "0x1c7de3c803cc3b6c806b4a7f17cd72fa73bdbd40";
+const address = "0x78a5c32ea41a095b4b56197e40b892f03a0b97a7";
 
 const abi = [
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_ID",
-				"type": "uint256"
-			}
-		],
-		"name": "hospitalSign",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
 	{
 		"constant": false,
 		"inputs": [
@@ -42,6 +28,20 @@ const abi = [
 			}
 		],
 		"name": "newRecord",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_ID",
+				"type": "uint256"
+			}
+		],
+		"name": "signRecord",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -157,46 +157,7 @@ const abi = [
 			},
 			{
 				"name": "signatureCount",
-				"type": "uint8"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_ID",
 				"type": "uint256"
-			}
-		],
-		"name": "getRecords",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "string"
-			},
-			{
-				"name": "",
-				"type": "string"
-			},
-			{
-				"name": "",
-				"type": "string"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "uint8"
 			}
 		],
 		"payable": false,

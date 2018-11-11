@@ -1,11 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import web3 from './web3';
 import HealthCare from './HealthCare';
-
-// import './patient.css';
+import web3 from './web3';
 
  export default class Patient extends React.Component{
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+            records: [],
+            recID: '',
+            pname: '',
+            dDate: '',
+            hname: '',
+            price: '',
+            message: ''
+    }
+}
+
+async handleClick(event) {
+  event.preventDefault();
+  const accounts = await web3.eth.getAccounts();
+  await HealthCare.methods.newRecord(this.state.recID, this.state.pname, this.state.dDate, this.state.hname, this.state.price).send({from: accounts[0],  gas: 2100000});
+  this.setState({message: 'Record saved!!!'})
+}
+
    render(){
      return(
       <div className="container container-fluid login-conatiner">
@@ -15,21 +35,18 @@ import HealthCare from './HealthCare';
          <form method="post" autoComplete="off">
           <h2 className="text-center">New Record</h2>
           <div className="form-group">
-          <input type="text" className="form-control" placeholder="ID"></input></div>
+          <input type="text" value={this.state.recID} onChange={event => this.setState({recID: event.target.value})} className="form-control" placeholder="ID"></input></div>
           <div className="form-group">
-
-          <input type="text" className="form-control" placeholder="Name"></input></div>
+          <input type="text" value={this.state.pname} onChange={event => this.setState({pname: event.target.value})} className="form-control" placeholder="Name"></input></div>
           <div className="form-group">
-
-          <input type="Date" className="form-control" placeholder="Date"></input></div>
+          <input type="Date" value={this.state.dDate} onChange={event => this.setState({dDate: event.target.value})} className="form-control" placeholder="Date"></input></div>
           <div className="form-group">
-
-          <input type="text" className="form-control" placeholder="Hospital Name"></input></div>
+          <input type="text"  value={this.state.hname} onChange={event => this.setState({hname: event.target.value})}className="form-control" placeholder="Hospital Name"></input></div>
           <div className="form-group">
-
-          <input type="text" className="form-control" placeholder="Price"></input></div>
+          <input type="text" value={this.state.price} onChange={event => this.setState({price: event.target.value})} className="form-control" placeholder="Price"></input></div>
           <div className="form-group">
-          <button  className="btn btn-primary btn-block">Submit</button></div>
+          <button  className="btn btn-primary btn-block"  onClick={this.handleClick}>Submit</button></div>
+          {this.state.message && <p className="alert alert-danger fade in">{this.state.message}</p>}
           <div className="clearfix">
           </div>
           </form>
