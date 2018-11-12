@@ -1,26 +1,26 @@
 import React from 'react';
-import web3 from './web3';
+import ReactDOM from 'react-dom';
 import HealthCare from './HealthCare';
-//import './ladmin.css';
+import web3 from './web3';
 
  export default class Hadmin extends React.Component{
-  /* state = {
-     hospitalSign: '',
-   };
 
-   async componentDidMount(){
-    const hospitalAdmin = await HealthCare.methods.hospitalAdmin().call();
+   constructor(props) {
+  super(props);
+  this.handleClick = this.handleClick.bind(this);
+  this.state = {
+          records: [],
+          recID: '',
+          message: ''
 
-    this.setState({hospitalAdmin});
-   }
-
-   onSubmit = async (event) => {
-     event.preventDefault();
-
-
-
-   }; */
-
+  }
+}
+async handleClick(event) {
+event.preventDefault();
+const accounts = await web3.eth.getAccounts();
+await HealthCare.methods.signRecord(this.state.recID).send({from: accounts[0],  gas: 2100000});
+this.setState({message: 'Record approved!'})
+}
 
    render(){
      return(
@@ -31,11 +31,12 @@ import HealthCare from './HealthCare';
       <div className="login-form">
          <h4 className="text-center">Approve Medical Record</h4>
          <div className="form-group">
-          <input type="Number" className="form-control" placeholder="Input"></input><br />
+          <input type="number" value={this.state.recID} onChange={event => this.setState({recID: event.target.value})}className="form-control" placeholder="ID"></input><br />
           </div>
           <div className="form-group">
-          <button className="btn btn-primary btn-block">Approve</button>
+          <button className="btn btn-primary btn-block" onClick={this.handleClick}>Approve</button>
           </div>
+          {this.state.message && <p className="alert alert-danger fade in">{this.state.message}</p>}
          </div>
          </div>
          <div className="col-md-6 col-md-offset-2">
