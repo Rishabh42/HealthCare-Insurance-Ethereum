@@ -8,7 +8,6 @@ export default class Labadmin extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      records: [],
       recID: "",
       message: ""
     };

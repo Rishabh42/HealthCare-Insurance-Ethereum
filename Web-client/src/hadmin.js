@@ -8,11 +8,11 @@ export default class Hadmin extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      records: [],
       recID: "",
       message: ""
     };
   }
+
   async handleClick(event) {
     event.preventDefault();
     const accounts = await web3.eth.getAccounts();

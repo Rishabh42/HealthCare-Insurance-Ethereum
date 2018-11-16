@@ -8,7 +8,6 @@ export default class Patient extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      records: [],
       recID: "",
       pname: "",
       dDate: "",
