@@ -1,4 +1,4 @@
-# High level use case
+# Medical Insurance claiming DApp (for ConsenSys)
 Problem statement:
 1) Patient logs in, uploads medical/lab tests bills and submits it for insurance. Notifications are sent to hospital and lab admin.
 2) Hospital admin logs in, verifies and approves the bills. This approval should be stored on a smart contract
