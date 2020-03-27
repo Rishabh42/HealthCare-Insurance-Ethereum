@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity >=0.4.22 <0.6.0;
 
 contract HealthCare {
 
@@ -24,7 +24,7 @@ contract HealthCare {
 
     constructor() public {
         hospitalAdmin = msg.sender;
-        labAdmin = 0x7fAA47fc6F7027feF185c766f9c3C0cb5d8D8850;     //assigning a hard coded address from ganache                   
+        labAdmin = 0xF6F2F51c07e44efE7BC25E0EC6B332f39d930ac0;     //assigning a hard coded address from ganache                   
     }
     
     
@@ -36,7 +36,7 @@ contract HealthCare {
     event recordSigned(uint256 ID, string testName, string date, string hospitalName, uint256 price);
     
     // Create new record
-    function newRecord (uint256 _ID, string _tName, string _date, string hName, uint256 price) public{
+    function newRecord (uint256 _ID, string memory _tName, string memory _date, string memory hName, uint256 price) public{
         Record storage _newrecord = _records[_ID];
 
         // Only allows new records to be created
