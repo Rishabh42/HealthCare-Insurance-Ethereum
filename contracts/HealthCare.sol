@@ -7,13 +7,13 @@ contract HealthCare {
 
     struct Record {
         uint256 ID;
-        uint256 testName;
-        uint256 date;
-        uint256 hospitalName;
         uint256 price;
         uint256 signatureCount;
-        address pAddr;
+        string testName;
+        string date;
+        string hospitalName;
         bool isValue;
+        address pAddr;
         mapping (address => uint256) signatures;
     }
 
@@ -24,7 +24,7 @@ contract HealthCare {
 
     constructor() public {
         hospitalAdmin = msg.sender;
-        labAdmin = 0x7322f4D0763356d9ED7C52C275180A2C0f17Df48;     //assigning a hard coded address from ganache                   
+        labAdmin = 0xF6F2F51c07e44efE7BC25E0EC6B332f39d930ac0;     //assigning a hard coded address from ganache                   
     }
     
     
