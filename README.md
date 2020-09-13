@@ -8,3 +8,6 @@ Problem statement:
 
  `HealthCare.sol` contract maintains the logic for this DApp.  
   The web pages found in the `Web-client` folder are used to communicate with the deployed smart contract and also allow logging in for each specific user
+
+## Steps to run
+stay tuned..
