@@ -11,10 +11,10 @@ Problem statement:
 
 ## Steps to deploy and interact with the contract:
 1. Copy and paste the contract code on https://remix.ethereum.org/
-2. Run an instance of ganache-cli on your local machine and connect your metamask wallet to it. Also, add the first 3 accounts from ganache to your metamask by importing their private keys and assign the following names to it:
-    account 1: Hospital admin
-    account 2: Lab admin
-    account 3: Patient
+2. Run an instance of ganache-cli on your local machine and connect your metamask wallet to it. Also, add the first 3 accounts from ganache to your metamask by importing their private keys and assign the following names to it:  
+    account 1: Hospital admin  
+    account 2: Lab admin  
+    account 3: Patient  
 3. Replace the Lab admin's address inside the constructor on line 27 with the Lab admin's address that we configured in the previous step.
 4. Select `Injected Web3` in the `Environment` field and make sure your Metamask wallet is unlocked. This will connect Remix to the first account(Hospital admin) in your Metamask wallet.
 5. Deploy the contract
