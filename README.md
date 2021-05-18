@@ -32,4 +32,15 @@ With Remix's new interface, you need to change the account address from the `ACC
 <img width="369" alt="Screenshot 2021-05-02 at 2 10 52 PM" src="https://user-images.githubusercontent.com/20457952/117578650-f00c6480-b10c-11eb-906e-c5ff79252585.png">
 
 ## Known issues:  
-- The table on the React front end doesn't display the records created by the user (Issue #1)
+- The table on the React front end doesn't display the records created by the user (Issue #1).  
+
+The main focus of this project at the time of making was the smart contract logic, I just made the front end in a jiffy as I had some extra time left after implementing the contracts.  
+
+Contributions to fix the open issues are welcome, you'll receive some DOGE as well 😏
+
+## Steps to contribute  
+1. Fork this repo.
+2. Commit your changes.
+3. Send a PR to this project's `master` branch and add me as a reviewer
+
+
