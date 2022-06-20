@@ -17,7 +17,7 @@ contract HealthCare {
         mapping (address => uint256) signatures;
     }
 
-    constructor(address _labAdmin){
+    constructor(address _labAdmin) {
         hospitalAdmin = msg.sender;
         labAdmin = _labAdmin;
     }
@@ -43,7 +43,7 @@ contract HealthCare {
 
     }
 
-    modifier validateRecord(uint256 _ID){
+    modifier validateRecord(uint256 _ID) {
         // Only allows new records to be created
         require(!_records[_ID].isValue, "Record with this ID is already exist, you cannot create new record with the same ID");
         _;
@@ -57,8 +57,7 @@ contract HealthCare {
         string memory hName,
         uint256 price
     )
-    validateRecord(_ID) public
-    {
+    validateRecord(_ID) public {
         Record storage _newrecord = _records[_ID];
         _newrecord.pAddr = msg.sender;
         _newrecord.ID = _ID;
