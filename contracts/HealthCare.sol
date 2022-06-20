@@ -1,7 +1,7 @@
-pragma solidity >=0.4.22 <0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
 contract HealthCare {
-
     address private hospitalAdmin;
     address private labAdmin;
 
@@ -17,9 +17,9 @@ contract HealthCare {
         mapping (address => uint256) signatures;
     }
 
-    constructor() public {
+    constructor(address _labAdmin){
         hospitalAdmin = msg.sender;
-        labAdmin = 0xF6F2F51c07e44efE7BC25E0EC6B332f39d930ac0; //assigning a hard coded address from ganache
+        labAdmin = _labAdmin;
     }
 
     // Mapping to store records
@@ -45,7 +45,7 @@ contract HealthCare {
 
     modifier validateRecord(uint256 _ID){
         // Only allows new records to be created
-        require(!_records[_ID].isValue, "You cannot create new record on same ID");
+        require(!_records[_ID].isValue, "Record with this ID is already exist, you cannot create new record with the same ID");
         _;
     }
 
