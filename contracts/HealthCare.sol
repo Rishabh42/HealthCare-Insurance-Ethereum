@@ -2,8 +2,8 @@
 pragma solidity ^0.8.0;
 
 contract HealthCare {
-    address private hospitalAdmin;
-    address private labAdmin;
+    address public hospitalAdmin;
+    address public labAdmin;
 
     struct Record {
         uint256 ID;
@@ -45,7 +45,7 @@ contract HealthCare {
 
     modifier validateRecord(uint256 _ID) {
         // Only allows new records to be created
-        require(!_records[_ID].isValue, "Record with this ID is already exists");
+        require(!_records[_ID].isValue, "Record with this ID already exists");
         _;
     }
 
