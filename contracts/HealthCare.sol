@@ -36,8 +36,8 @@ contract HealthCare {
 
     modifier checkAuthBeforeSign(uint256 _ID) {
         require(_records[_ID].isValue, "Recored does not exist");
-        require(address(0) != _records[_ID].pAddr, "You are not authorized person to perform this action.");
-        require(msg.sender != _records[_ID].pAddr, "You are not authorized person to perform this action.");
+        require(address(0) != _records[_ID].pAddr, "Address is zero");
+        require(msg.sender != _records[_ID].pAddr, "You are not authorized to perform this action");
         require(_records[_ID].signatures[msg.sender] != 1, "Same person cannot sign twice.");
         _;
 
@@ -45,7 +45,7 @@ contract HealthCare {
 
     modifier validateRecord(uint256 _ID) {
         // Only allows new records to be created
-        require(!_records[_ID].isValue, "Record with this ID is already exist, you cannot create new record with the same ID");
+        require(!_records[_ID].isValue, "Record with this ID is already exists");
         _;
     }
 
