@@ -15,7 +15,7 @@ Problem statement:
     account 1: Hospital admin  
     account 2: Lab admin  
     account 3: Patient  
-3. Replace the Lab admin's address inside the constructor on line 27 with the Lab admin's address that we configured in the previous step.
+3. Pass the Lab Admin's address as an argument in the constructor while deploying the contract
 4. Select `Injected Web3` in the `Environment` field and make sure your Metamask wallet is unlocked. This will connect Remix to the first account(Hospital admin) in your Metamask wallet.
 5. Deploy the contract
 6. Select Account 3(Patient) and created a new medical record by calling the `newRecord` function with the respective fields.
