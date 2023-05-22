@@ -52,10 +52,10 @@ contract HealthCare {
     // Create new record
     function newRecord (
         uint256 _ID,
+        uint256 price,
         string memory _tName,
         string memory _date,
-        string memory hName,
-        uint256 price
+        string memory hName
     )
     validateRecord(_ID) public {
         Record storage _newrecord = _records[_ID];
